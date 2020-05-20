@@ -1,15 +1,47 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[DisallowMultipleComponent]
 public class Tower : MonoBehaviour
 {
     [SerializeField] Transform objectToPan;
-    [SerializeField] Transform enemyToLookAt;
+    [SerializeField] Transform targetEnemy;
+
+    [SerializeField] float attackRange = 30f;
+    [SerializeField] ParticleSystem bulletParticles;
 
     // Update is called once per frame
     void Update()
     {
-        objectToPan.LookAt(enemyToLookAt);
+        if (targetEnemy)
+        {
+            objectToPan.LookAt(targetEnemy);
+            FireAtEnemy();
+        }
+        else
+        {
+            Shoot(false);
+        }
+    }
+
+    private void FireAtEnemy()
+    {
+        float distanceToEnemy = Vector3.Distance(targetEnemy.transform.position, gameObject.transform.position); 
+        if(distanceToEnemy <= attackRange)
+        {
+            Shoot(true);
+        }
+        else
+        {
+            Shoot(false);
+        }
+    }
+
+    private void Shoot(bool isActive)
+    {
+        var emissionModule = bulletParticles.emission;
+        emissionModule.enabled = isActive;
     }
 }
