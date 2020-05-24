@@ -6,6 +6,8 @@ using UnityEngine;
 [DisallowMultipleComponent]
 public class Tower : MonoBehaviour
 {
+    public Waypoint baseWaypoint;
+
     [SerializeField] Transform objectToPan;
     [SerializeField] float attackRange = 30f;
     [SerializeField] ParticleSystem bulletParticles;
