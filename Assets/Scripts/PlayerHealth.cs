@@ -8,6 +8,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] int playerHealth = 10;
     [SerializeField] int damgeOnHit = 1;
     [SerializeField] Text healthText;
+    [SerializeField] AudioClip hurtSound;
 
     public HealthBar healthBar;
 
@@ -20,6 +21,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        GetComponent<AudioSource>().PlayOneShot(hurtSound);
         playerHealth -= damgeOnHit;
         healthBar.SetHealth(playerHealth);
         CameraShaker.Instance.ShakeOnce(4f, 4f, .1f, 1f);

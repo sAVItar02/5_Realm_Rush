@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4884332b60502d4d8d2300c488d04bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseWaypoint: {fileID: 0}
   objectToPan: {fileID: 4481217804130112642}
   attackRange: 30
   bulletParticles: {fileID: 330878715}
@@ -59,6 +60,16 @@ PrefabInstance:
         type: 3}
       propertyPath: CollisionModule.minKillSpeed
       value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2634940660543779348, guid: c84a709ba4cb4c142b0e7e29c9ec2541,
+        type: 3}
+      propertyPath: simulationSpeed
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2634940660543779348, guid: c84a709ba4cb4c142b0e7e29c9ec2541,
+        type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 2634940660543779433, guid: c84a709ba4cb4c142b0e7e29c9ec2541,
         type: 3}

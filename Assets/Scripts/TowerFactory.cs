@@ -43,6 +43,8 @@ public class TowerFactory : MonoBehaviour
         oldTower.baseWaypoint.isPlaceable = true;
         NewbaseWaypoint.isPlaceable = false;
 
+        oldTower.baseWaypoint = NewbaseWaypoint;
+
         oldTower.transform.position = NewbaseWaypoint.transform.position;
 
         towerQueue.Enqueue(oldTower);
