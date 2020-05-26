@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using EZCameraShake;
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] int playerHealth = 10;
@@ -22,6 +22,7 @@ public class PlayerHealth : MonoBehaviour
     {
         playerHealth -= damgeOnHit;
         healthBar.SetHealth(playerHealth);
+        CameraShaker.Instance.ShakeOnce(4f, 4f, .1f, 1f);
         //healthText.text = playerHealth.ToString();
     }
 }
