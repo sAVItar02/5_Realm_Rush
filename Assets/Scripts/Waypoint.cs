@@ -11,6 +11,8 @@ public class Waypoint : MonoBehaviour
     public Waypoint exploredFrom;
     public bool isPlaceable = true;
 
+    [SerializeField] AudioClip denySFX;
+
     public int GetGridSize()
     {
         return gridSize;
@@ -34,7 +36,7 @@ public class Waypoint : MonoBehaviour
             }
             else
             {
-                print("Cant place here");
+                GetComponent<AudioSource>().PlayOneShot(denySFX);
             }
         }
     }
