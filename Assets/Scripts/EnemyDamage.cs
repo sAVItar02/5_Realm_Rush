@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class EnemyDamage : MonoBehaviour
 {
-    [SerializeField] int enemyHitPoints = 10;
+    public int enemyHitPoints = 10;
     [SerializeField] ParticleSystem enemyHitPrefab;
     [SerializeField] ParticleSystem enemyDeathPrefab;
     [SerializeField] AudioClip shotSound;
